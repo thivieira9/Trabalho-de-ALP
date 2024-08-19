@@ -1,0 +1,185 @@
+Escreva um algoritmo para ler um valor (do teclado) e escrever (na tela) o seu antecessor.:
+#include <stdio.h>
+
+int main() {
+int valor;
+printf("Digite um valor: ");
+scanf("%d", &valor);
+printf("O antecessor de %d é %d.\n", valor, valor - 1);
+return 0;
+}
+
+Escreva um algoritmo para ler as dimensões de um retângulo (base e altura), calcular e escrever a ´area do
+retângulo:
+
+#include <stdio.h>
+
+int main() {
+float base, altura, area;
+printf("Digite a base do retângulo: ");
+scanf("%f", &base);
+printf("Digite a altura do retângulo: ");
+scanf("%f", &altura);
+area = base * altura;
+printf("A área do retângulo é: %.2f\n", area);
+return 0;
+}
+
+Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e escreva a idade dessa
+pessoa expressa apenas em dias. Considerar ano com 365 dias e mês com 30 dias:
+
+#include <stdio.h>
+
+int main() {
+int anos, meses, dias, totalDias;
+printf("Digite sua idade em anos, meses e dias:\n");
+printf("Anos: ");
+scanf("%d", &anos);
+printf("Meses: ");
+scanf("%d", &meses);
+printf("Dias: ");
+scanf("%d", &dias);
+
+totalDias = (anos * 365) + (meses * 30) + dias;
+printf("Sua idade em dias é: %d dias\n", totalDias);
+return 0;
+}
+
+Escreva um algoritmo para ler o número total de eleitores de um município, o número de votos brancos, nulos
+e válidos. Calcular e escrever o percentual que cada um representa em relação ao ao total de eleitores:
+
+#include <stdio.h>
+
+int main() {
+int totalEleitores, votosBrancos, votosNulos, votosValidos;
+float percBrancos, percNulos, percValidos;
+
+printf("Digite o número total de eleitores: ");
+scanf("%d", &totalEleitores);
+printf("Digite o número de votos brancos: ");
+scanf("%d", &votosBrancos);
+printf("Digite o número de votos nulos: ");
+scanf("%d", &votosNulos);
+printf("Digite o número de votos válidos: ");
+scanf("%d", &votosValidos);
+
+percBrancos = (votosBrancos * 100.0) / totalEleitores;
+percNulos = (votosNulos * 100.0) / totalEleitores;
+percValidos = (votosValidos * 100.0) / totalEleitores;
+
+printf("Percentual de votos brancos: %.2f%%\n", percBrancos);
+printf("Percentual de votos nulos: %.2f%%\n", percNulos);
+printf("Percentual de votos válidos: %.2f%%\n", percValidos);
+
+return 0;
+}
+
+Escreva um algoritmo para ler o salário mensal atual de um funcionário e o percentual de reajuste. Calcular
+e escrever o valor do novo salário:
+
+#include <stdio.h>
+
+int main() {
+float salarioAtual, percentualReajuste, novoSalario;
+
+printf("Digite o salário atual: ");
+scanf("%f", &salarioAtual);
+printf("Digite o percentual de reajuste: ");
+scanf("%f", &percentualReajuste);
+
+novoSalario = salarioAtual + (salarioAtual * percentualReajuste / 100);
+printf("O novo salário é: %.2f\n", novoSalario);
+
+return 0;
+}
+
+O custo de um carro novo ao consumidor é a soma do custo de fábrica com a porcentagem do distribuidor
+e dos impostos (aplicados ao custo de fábrica). Supondo que o percentual do distribuidor seja de 28% e os
+impostos de 45%, escrever um algoritmo para ler o custo de fábrica de um carro, calcular e escrever o custo
+final ao consumidor:
+
+#include <stdio.h>
+
+int main() {
+float custoFabrica, custoFinal;
+
+printf("Digite o custo de fábrica do carro: ");
+scanf("%f", &custoFabrica);
+
+custoFinal = custoFabrica + (custoFabrica * 0.28) + (custoFabrica * 0.45);
+printf("O custo final ao consumidor é: %.2f\n", custoFinal);
+
+return 0;
+}
+
+Uma revendedora de carros usados paga a seus funcionários vendedores um salário fixo por mês, mais uma comissão também fixa para cada carro vendido e mais 5% do valor das vendas por ele efetuadas. Escrever um algoritmo que leia o número de carros por ele vendidos, o valor total de suas vendas, o salário fixo e o valor
+que ele recebe por carro vendido. Calcule e escreva o salário final do vendedor:
+
+#include <stdio.h>
+
+int main() {
+int carrosVendidos;
+float valorTotalVendas, salarioFixo, comissaoPorCarro, salarioFinal;
+
+printf("Digite o número de carros vendidos: ");
+scanf("%d", &carrosVendidos);
+printf("Digite o valor total das vendas: ");
+scanf("%f", &valorTotalVendas);
+printf("Digite o salário fixo: ");
+scanf("%f", &salarioFixo);
+printf("Digite a comissão por carro vendido: ");
+scanf("%f", &comissaoPorCarro);
+
+salarioFinal = salarioFixo + (carrosVendidos * comissaoPorCarro) + (valorTotalVendas * 0.05);
+printf("O salário final do vendedor é: %.2f\n", salarioFinal);
+
+return 0;
+}
+
+Escreva um algoritmo para ler uma temperatura em graus Fahrenheit, calcular e escrever o valor correspon-
+dente em graus Celsius (baseado na f´ormula abaixo):
+c5=
+F − 32
+9
+
+#include <stdio.h>
+
+int main() {
+float fahrenheit, celsius;
+
+printf("Digite a temperatura em Fahrenheit: ");
+scanf("%f", &fahrenheit);
+
+celsius = (fahrenheit - 32) * 5 / 9;
+printf("A temperatura em Celsius é: %.2f\n", celsius);
+
+return 0;
+}
+
+Faça um algoritmo que leia três notas de um aluno, calcule e escreva a média final deste aluno. Considerar
+que a média ´e ponderada e que o peso das notas é 2, 3 e 5. Fórmula para o cálculo da média final é:
+MF =
+2N1 + 3N2 + 5N3
+10
+
+#include <stdio.h>
+
+int main() {
+float n1, n2, n3, mediaFinal;
+
+// Leitura das notas
+printf("Digite a primeira nota (peso 2): ");
+scanf("%f", &n1);
+printf("Digite a segunda nota (peso 3): ");
+scanf("%f", &n2);
+printf("Digite a terceira nota (peso 5): ");
+scanf("%f", &n3);
+
+// Cálculo da média ponderada
+mediaFinal = (2 * n1 + 3 * n2 + 5 * n3) / 10;
+
+// Exibição da média final
+printf("A média final do aluno é: %.2f\n", mediaFinal);
+
+return 0;
+}
