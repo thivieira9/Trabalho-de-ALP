@@ -1,0 +1,408 @@
+1. Ler um valor e escrever a mensagem E MAIOR QUE 10! se o valor lido for maior que 10, caso contrário 
+
+escrever NÃO É MAIOR QUE 10?
+
+#include <stdio.h>
+
+int main() {
+    int valor;
+
+    printf("Digite um valor: ");
+    scanf("%d", &valor);
+
+    if (valor > 10) {
+        printf("E MAIOR QUE 10!\n");
+    } else {
+        printf("NAO E MAIOR QUE 10\n");
+    }
+
+    return 0;
+}
+
+
+2. Ler um valor e escrever se é positivo ou negativo (considere o valor zero como positivo).
+
+#include <stdio.h>
+
+int main() {
+    int valor;
+
+    printf("Digite um valor: ");
+    scanf("%d", &valor);
+
+    if (valor >= 0) {
+        printf("O valor e positivo.\n");
+    } else {
+        printf("O valor e negativo.\n");
+    }
+
+    return 0;
+}
+
+
+
+
+3. As maçãs custam R$1, 30 cada se forem compradas menos de uma dúzia, e R$1, 00 se forem compradas pelo
+
+menos 12. Escreva um programa que leia o n´umero de maçãs compradas, calcule e escreva o custo total da
+
+compra.
+
+#include <stdio.h>
+
+int main() {
+    int quantidade;
+    float preco, total;
+
+    
+    printf("Digite o numero de macas compradas: ");
+    scanf("%d", &quantidade);
+
+    
+    if (quantidade < 12) {
+        preco = 1.30;
+    } else {
+        preco = 1.00;
+    }
+
+   
+    total = quantidade * preco;
+
+    
+    printf("O custo total da compra e: R$ %.2f\n", total);
+
+    return 0;
+}
+
+4. Ler as notas da 1ª. e 2ª. avaliações de um aluno. Calcular a média aritmética simples e escrever uma
+
+mensagem que diga se o aluno foi ou não aprovado (considerar que nota igual ou maior que 7 o aluno é
+
+aprovado). Escrever também a média calculada.
+
+#include <stdio.h>
+
+int main() {
+    float nota1, nota2, media;
+
+    
+    printf("Digite a nota da 1ª avaliação: ");
+    scanf("%f", &nota1);
+
+    printf("Digite a nota da 2ª avaliação: ");
+    scanf("%f", &nota2);
+
+ 
+    media = (nota1 + nota2) / 2;
+
+    
+    printf("A média do aluno é: %.2f\n", media);
+
+    
+    if (media >= 7) {
+        printf("O aluno foi aprovado.\n");
+    } else {
+        printf("O aluno não foi aprovado.\n");
+    }
+
+    return 0;
+}
+
+5. Ler o ano atual e o ano de nascimento de uma pessoa. Escrever uma mensagem que diga se ela poder à ou
+
+não votar este ano (não é necessário considerar o mês em que a pessoa nasceu).
+
+
+#include <stdio.h>
+
+int main() {
+    int anoAtual, anoNascimento, idade;
+
+    
+    printf("Digite o ano atual: ");
+    scanf("%d", &anoAtual);
+
+    printf("Digite o ano de nascimento: ");
+    scanf("%d", &anoNascimento);
+
+    
+    idade = anoAtual - anoNascimento;
+
+    
+    if (idade >= 16) {
+        printf("Você pode votar este ano.\n");
+    } else {
+        printf("Você não pode votar este ano.\n");
+    }
+
+    return 0;
+}
+
+6. Ler dois valores (considere que não serão lidos valores iguais) e escrever o maior deles.
+
+#include <stdio.h>
+
+int main() {
+    int valor1, valor2;
+
+    
+    printf("Digite o primeiro valor: ");
+    scanf("%d", &valor1);
+
+    printf("Digite o segundo valor: ");
+    scanf("%d", &valor2);
+
+    
+    if (valor1 > valor2) {
+        printf("O maior valor é: %d\n", valor1);
+    } else {
+        printf("O maior valor é: %d\n", valor2);
+    }
+
+    return 0;
+}
+
+7. Ler dois valores (considere que não serão lidos valores iguais) e escrevê-los em ordem crescente.
+
+
+#include <stdio.h>
+
+int main() {
+    int valor1, valor2;
+
+   
+    printf("Digite o primeiro valor: ");
+    scanf("%d", &valor1);
+
+    printf("Digite o segundo valor: ");
+    scanf("%d", &valor2);
+
+    
+    if (valor1 < valor2) {
+        printf("Valores em ordem crescente: %d, %d\n", valor1, valor2);
+    } else {
+        printf("Valores em ordem crescente: %d, %d\n", valor2, valor1);
+    }
+
+    return 0;
+}
+
+8. Ler a hora de início e a hora de fim de um jogo de Xadrez (considere apenas horas inteiras, sem os minutos)
+
+e calcule a duração do jogo em horas, sabendo-se que o tempo m´aximo de duração do jogo é de 24 horas e
+
+que o jogo pode iniciar em um dia e terminar no dia seguinte.
+
+#include <stdio.h>
+
+int main() {
+    int inicio, fim, duracao;
+
+    
+    printf("Digite a hora de início do jogo: ");
+    scanf("%d", &inicio);
+
+    printf("Digite a hora de fim do jogo: ");
+    scanf("%d", &fim);
+
+   
+    if (fim >= inicio) {
+        duracao = fim - inicio;
+    } else {
+        duracao = (24 - inicio) + fim;
+    }
+
+   
+    printf("A duração do jogo foi de %d horas.\n", duracao);
+
+    return 0;
+}
+
+9. A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que trabalhar mais de 40
+
+horas receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%. Escreva um
+
+algoritmo que leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do
+
+funcionário, que deverá ser acrescido das horas extras, caso tenham sido trabalhadas (considere que o mês 
+
+possua 4 semanas exatas).
+
+#include <stdio.h>
+
+int main() {
+    float horasTrabalhadas, salarioHora, salarioTotal, horasExtras;
+
+    
+    printf("Digite o número de horas trabalhadas no mês: ");
+    scanf("%f", &horasTrabalhadas);
+
+    printf("Digite o salário por hora: ");
+    scanf("%f", &salarioHora);
+
+    
+    if (horasTrabalhadas > 160) { // 160 horas correspondem a 40 horas por semana em 4 semanas
+        horasExtras = horasTrabalhadas - 160;
+        salarioTotal = (160 * salarioHora) + (horasExtras * salarioHora * 1.5);
+    } else {
+        salarioTotal = horasTrabalhadas * salarioHora;
+    }
+
+    
+    printf("O salário total do funcionário é: R$ %.2f\n", salarioTotal);
+
+    return 0;
+}
+
+
+10. Crie um algoritmo para, tendo como dados de entrada o nome, a altura e o sexo (M ou F) de uma pessoa,
+
+calcule e mostre seu peso ideal, utilizando as seguintes fórmulas:
+
+• para sexo masculino: peso ideal = (72, 7 × altura) − 58
+
+• para sexo feminino: peso ideal = (62, 1 × altura) − 44, 7
+
+#include <stdio.h>
+
+int main() {
+    char sexo;
+    float altura, pesoIdeal;
+
+    
+    printf("Digite a altura (em metros): ");
+    scanf("%f", &altura);
+
+    printf("Digite o sexo (M para masculino, F para feminino): ");
+    scanf(" %c", &sexo); // 
+
+    
+    if (sexo == 'M' || sexo == 'm') {
+        pesoIdeal = (72.7 * altura) - 58;
+    } else if (sexo == 'F' || sexo == 'f') {
+        pesoIdeal = (62.1 * altura) - 44.7;
+    } else {
+        printf("Sexo inválido!\n");
+        return 1; // Encerrar o programa se o sexo for inválido
+    }
+
+    
+    printf("O peso ideal é: %.2f kg\n", pesoIdeal);
+
+    return 0;
+}
+
+11. Ler o salário fixo e o valor das vendas efetuadas pelo vendedor de uma empresa. Sabendo-se que ele recebe
+
+uma comissão de 3% sobre o total das vendas até R$1.500, 00 mais 5% sobre o que ultrapassar este valor,
+
+calcular e escrever o seu salário total.
+
+#include <stdio.h>
+
+int main() {
+    float salarioFixo, vendas, comissao, salarioTotal;
+
+    
+    printf("Digite o salário fixo: ");
+    scanf("%f", &salarioFixo);
+
+    printf("Digite o valor total das vendas: ");
+    scanf("%f", &vendas);
+
+   
+    if (vendas <= 1500) {
+        comissao = vendas * 0.03;
+    } else {
+        comissao = 1500 * 0.03 + (vendas - 1500) * 0.05;
+    }
+
+    
+    salarioTotal = salarioFixo + comissao;
+
+    
+    printf("O salário total é: R$ %.2f\n", salarioTotal);
+
+    return 0;
+}
+
+
+2. Faça um algoritmo para ler: número da conta do cliente, saldo, débito e crédito. Após, calcular e escrever o
+
+saldo atual (saldo atual = saldo - débito + crédito). Também testar se saldo atual for maior ou igual a zero
+
+escrever a mensagem ’Saldo Positivo’, senão escrever a mensagem ’Saldo Negativo’.
+
+#include <stdio.h>
+
+int main() {
+    int numeroConta;
+    float saldo, debito, credito, saldoAtual;
+
+  
+    printf("Digite o número da conta: ");
+    scanf("%d", &numeroConta);
+
+    printf("Digite o saldo: ");
+    scanf("%f", &saldo);
+
+    printf("Digite o valor do débito: ");
+    scanf("%f", &debito);
+
+    printf("Digite o valor do crédito: ");
+    scanf("%f", &credito);
+
+   
+    saldoAtual = saldo - debito + credito;
+
+    
+    printf("O saldo atual é: R$ %.2f\n", saldoAtual);
+
+    if (saldoAtual >= 0) {
+        printf("Saldo Positivo.\n");
+    } else {
+        printf("Saldo Negativo.\n");
+    }
+
+    return 0;
+}
+
+
+13. Faça um algoritmo para ler: quantidade atual em estoque, quantidade máxima em estoque e quantidade
+
+m´ınima em estoque de um produto. Calcular e escrever a quantidade média ((quantidade média = quantidade
+
+máxima + quantidade mínima)/2). Se a quantidade em estoque for maior ou igual a quantidade média escrever
+
+a mensagem ’Não efetuar compra’, senão escrever a mensagem ’Efetuar compra’.
+
+
+#include <stdio.h>
+
+int main() {
+    int quantidadeAtual, quantidadeMaxima, quantidadeMinima, quantidadeMedia;
+
+    
+    printf("Digite a quantidade atual em estoque: ");
+    scanf("%d", &quantidadeAtual);
+
+    printf("Digite a quantidade máxima em estoque: ");
+    scanf("%d", &quantidadeMaxima);
+
+    printf("Digite a quantidade mínima em estoque: ");
+    scanf("%d", &quantidadeMinima);
+
+    
+    quantidadeMedia = (quantidadeMaxima + quantidadeMinima) / 2;
+
+    
+    if (quantidadeAtual >= quantidadeMedia) {
+        printf("Não efetuar compra.\n");
+    } else {
+        printf("Efetuar compra.\n");
+    }
+
+    return 0;
+}
+
+
