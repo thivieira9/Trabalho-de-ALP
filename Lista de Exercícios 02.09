@@ -1,0 +1,347 @@
+1. Escreva um algoritmo para ler 2 valores e se o segundo valor informado for ZERO, deve ser lido um novo
+
+valor, ou seja, para o segundo valor não pode ser aceito o valor zero e imprimir o resultado da divisão do
+
+primeiro valor lido pelo segundo valor lido. (utilizar a estrutura while).
+
+#include <stdio.h>
+
+int main() {
+    float valor1, valor2;
+
+    printf("Informe o primeiro valor: ");
+    scanf("%f", &valor1);
+
+    printf("Informe o segundo valor (diferente de 0): ");
+    scanf("%f", &valor2);
+
+    while (valor2 == 0) {
+        printf("VALOR INVÁLIDO. Informe outro valor: ");
+        scanf("%f", &valor2);
+    }
+
+    printf("Resultado da divisão: %.2f\n", valor1 / valor2);
+
+    return 0;
+}
+
+
+
+
+
+
+
+2. Reescreva o exercício anterior utilizando a estrutura do...while.
+
+#include <stdio.h>
+
+int main() {
+    float valor1, valor2;
+
+    printf("Informe o primeiro valor: ");
+    scanf("%f", &valor1);
+
+    printf("Informe o segundo valor (diferente de 0): ");
+    scanf("%f", &valor2);
+
+    while (valor2 == 0) {
+        printf("VALOR INVÁLIDO. Informe outro valor: ");
+        scanf("%f", &valor2);
+    }
+
+    printf("Resultado da divisão: %.2f\n", valor1 / valor2);
+
+    return 0;
+}
+
+
+
+
+
+3. Acrescentar uma mensagem de ’VALOR INVALIDO’ no exercício ´1 caso o segundo valor informado seja
+
+ZERO.
+
+#include <stdio.h>
+
+int main() {
+    float valor1, valor2;
+
+    printf("Informe o primeiro valor: ");
+    scanf("%f", &valor1);
+
+    printf("Informe o segundo valor (diferente de 0): ");
+    scanf("%f", &valor2);
+
+    while (valor2 == 0) {
+        printf("VALOR INVÁLIDO. Informe outro valor: ");
+        scanf("%f", &valor2);
+    }
+
+    printf("Resultado da divisão: %.2f\n", valor1 / valor2);
+
+    return 0;
+}
+
+
+
+
+
+4. Acrescentar uma mensagem de ’VALOR INVALIDO’ no exercício ´ 2 caso o segundo valor informado seja
+
+ZERO.
+
+#include <stdio.h>
+
+int main() {
+    float valor1, valor2;
+
+    printf("Informe o primeiro valor: ");
+    scanf("%f", &valor1);
+
+    printf("Informe o segundo valor (diferente de 0): ");
+    scanf("%f", &valor2);
+
+    while (valor2 == 0) {
+        printf("VALOR INVÁLIDO. Informe outro valor: ");
+        scanf("%f", &valor2);
+    }
+
+    printf("Resultado da divisão: %.2f\n", valor1 / valor2);
+
+    return 0;
+}
+
+
+
+
+5. Escreva um algoritmo para ler as notas da 1a. e 2a. avaliações de um aluno, calcule e imprima a média 
+
+(simples) desse aluno. Só devem ser aceitos valores válidos durante a leitura (0 a 10) para cada nota.
+
+#include <stdio.h>
+
+int main() {
+    float nota1, nota2;
+
+    do {
+        printf("Informe a primeira nota (0 a 10): ");
+        scanf("%f", &nota1);
+    } while (nota1 < 0 || nota1 > 10);
+
+    do {
+        printf("Informe a segunda nota (0 a 10): ");
+        scanf("%f", &nota2);
+    } while (nota2 < 0 || nota2 > 10);
+
+    printf("Média: %.2f\n", (nota1 + nota2) / 2);
+
+    return 0;
+}
+
+
+
+
+
+6. Acrescente uma mensagem ’NOVO CALCULO (S/N)?’ ao final do exercício ´ 5. Se for respondido ’S’ deve
+
+retornar e executar um novo cálculo, caso contrário deverá encerrar o algoritmo.
+
+#include <stdio.h>
+
+int main() {
+    float nota1, nota2;
+    char opcao;
+
+    do {
+        do {
+            printf("Informe a primeira nota (0 a 10): ");
+            scanf("%f", &nota1);
+        } while (nota1 < 0 || nota1 > 10);
+
+        do {
+            printf("Informe a segunda nota (0 a 10): ");
+            scanf("%f", &nota2);
+        } while (nota2 < 0 || nota2 > 10);
+
+        printf("Média: %.2f\n", (nota1 + nota2) / 2);
+
+        printf("NOVO CÁLCULO (S/N)? ");
+        scanf(" %c", &opcao);
+    } while (opcao == 'S' || opcao == 's');
+
+    return 0;
+}
+
+
+
+
+7. Escreva um algoritmo para imprimir os números de 1 (inclusive) a 10 (inclusive) em ordem crescente.
+
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+
+
+
+
+8. Escreva um algoritmo para imprimir os n´umeros de 1 (inclusive) a 10 (inclusive) em ordem decrescente.
+
+#include <stdio.h>
+
+int main() {
+    for (int i = 10; i >= 1; i--) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+
+
+
+
+9. Escreva um algoritmo para imprimir os 10 primeiros n´umeros inteiros maiores que 100.
+
+#include <stdio.h>
+
+int main() {
+    for (int i = 101; i <= 110; i++) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+
+
+
+
+10. Ler um valor N e imprimir todos os valores inteiros entre 1 (inclusive) e N (inclusive). Considere que o N ser´a
+
+sempre maior que ZERO.
+
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    printf("Informe um valor maior que 0: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+
+
+
+
+11. Modifique o exercício anterior para aceitar somente valores maiores que 0 para N. Caso o valor informado
+
+(para N) nao seja maior que 0, deverá ser lido um novo valor para N.
+
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    do {
+        printf("Informe um valor maior que 0: ");
+        scanf("%d", &N);
+    } while (N <= 0);
+
+    for (int i = 1; i <= N; i++) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+
+
+
+
+12. Escreva um algoritmo que calcule e imprima a tabuada do 8 (1 a 10).
+
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        printf("8 x %d = %d\n", i, 8 * i);
+    }
+
+    return 0;
+}
+
+
+
+
+13. Ler um valor inteiro (aceitar somente valores entre 1 e 10) e escrever a tabuada de 1 a 10 do valor lido.
+
+#include <stdio.h>
+
+int main() {
+    int valor;
+
+    do {
+        printf("Informe um valor entre 1 e 10: ");
+        scanf("%d", &valor);
+    } while (valor < 1 || valor > 10);
+
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", valor, i, valor * i);
+    }
+
+    return 0;
+}
+
+
+
+14. Fa¸ca um programa que leia um valor inteiro e crie um triˆangulo de *’s ao contrário. Por exemplo:
+
+Para n = 5:
+
+(Não consegui responder)
+
+
+
+15. Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros entre 15 (inclusive) e 100
+
+(inclusive).
+
+#include <stdio.h>
+
+int main() {
+    int soma = 0;
+    int quantidade = 0;
+
+    for (int i = 15; i <= 100; i++) {
+        soma += i;
+        quantidade++;
+    }
+
+
+
+
+16. Uma loja está levantando o valor total de todas as mercadorias em estoque. Escreva um algoritmo que
+
+permita a entrada das seguintes informações: a) o número total de mercadorias no estoque; b) o valor de cada
+
+mercadoria. Ao final imprimir o valor total em estoque e a média de valor das mercadorias.
+
+(Não consegui responder)
+
+
+17. O mesmo exercício anterior, mas agora não ser´a informado o número de mercadorias em estoque. Então o
+
+funcionamento deverá ser da seguinte forma: ler o valor da mercadoria e perguntar ‘MAIS MERCADORIAS
+
+(S/N)?’. Ao final, imprimir o valor total em estoque e a média de valor das mercadorias em estoque.
+
+(Não consegui responder)
